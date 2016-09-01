@@ -15,5 +15,10 @@ class Simon
 	def secuencia_recibida
 		@secuencia_recibida
 	end
+
+	def validar
+		throw Exception.new "Secuencia no recibida" if @secuencia_recibida.nil?
+		@secuencia == @secuencia_recibida
+	end
 end
 
