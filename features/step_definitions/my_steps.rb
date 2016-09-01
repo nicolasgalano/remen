@@ -12,6 +12,6 @@ Given(/^secuencia es (\d+)$/) do |numero|
 end
 
 When(/^click (\d+)$/) do |numero|
-	click_link(numero)
+	click_button(numero)
 end
 
