@@ -13,6 +13,7 @@ describe "simon" do
 		simon.secuencia_recibida.should == 2
 	end
 
+	# tener en cuenta posicion
 	it "deberia secuencia recibida correcta" do
 		simon = Simon.new 2
 		simon.recibir 2
@@ -30,6 +31,8 @@ describe "simon" do
 		expect { simon.validar }.to raise_error
 	end
 
-
+	# cuando gana, agrega otro valor
+	# lleva bien la cuenta de la cantidad de aciertos (no secuencial, global)
+	# cuando pierde, resetea
 end
 
