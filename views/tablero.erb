@@ -1,0 +1,12 @@
+Secuencia: <%= @@secuencia %>
+
+<form action="/click" method="POST">
+	<input type="hidden" name="valor" value="1">
+	<input type="submit" value="1">
+</form>
+<form action="/click" method="POST">
+	<input type="hidden" name="valor" value="2">
+	<input type="submit" value="2">
+</form>
+
+<%= @resultado %>
