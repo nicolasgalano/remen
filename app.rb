@@ -4,7 +4,6 @@ require_relative './lib/simon.rb'
 get '/' do
 	@@simon = Simon.new [1,2,1]
 	@@secuencia = @@simon.secuencia.join ","
-	@resultado = ""
 	#@@contador = 0
     erb :tablero
 end
@@ -15,7 +14,11 @@ post '/click' do
 	@@simon.recibir params["valor"].to_i
 
 	if @@simon.cantidad_intentos < 3
-		@resultado = "Segui"
+		if @@simon.validar
+			@resultado = "Segui"
+		else
+			@resultado = "Perdiste"
+		end	
 	else
 		if @@simon.validar
 			@resultado = "Ganaste"
@@ -23,9 +26,10 @@ post '/click' do
 			@resultado = "Perdiste"
 		end	
 	end
-    erb :tablero
+    erb :turno_jugador
 end
 
 get '/turno' do
-    ""
+	@resultado = ""
+    erb :turno_jugador
 end
