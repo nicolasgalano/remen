@@ -16,4 +16,12 @@ Scenario: Hago tres clicks y termina el juego y compara las secuencias
 	And click 1
 	Then veo "Ganaste"
 
+Scenario: Voy, Apreto mi turno, Oculta Secuencia
+	Given voy al sitio
+	When apreto "Turno"
+	Then no veo "Secuencia"
+
+
+
+
 

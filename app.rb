@@ -25,3 +25,7 @@ post '/click' do
 	end
     erb :tablero
 end
+
+get '/turno' do
+    ""
+end
