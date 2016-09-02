@@ -25,3 +25,11 @@ Given(/^voy a "(.*?)"$/) do |pantalla|
 	click_link(pantalla)
 end
 
+Given(/^Gano$/) do
+	@@simon = Simon.new [1,2,1]
+	visit '/'
+	click_link("Turno")
+	click_button(1)	
+	click_button(2)
+	click_button(1)		
+end
