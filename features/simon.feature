@@ -6,12 +6,14 @@ Scenario: Mostrar una secuencia
 
 Scenario: Hago un click y no pasa nada
 	Given voy al sitio
-	When Hago un click
+	When click 1
 	Then veo "Segui"
 
-Scenario: Hago tres clicks y termina el juego
+Scenario: Hago tres clicks y termina el juego y compara las secuencias
 	Given voy al sitio
-	When Hago tres click
-	Then veo "Terminado"
+	When click 1
+	And click 2
+	And click 1
+	Then veo "Ganaste"
 
 

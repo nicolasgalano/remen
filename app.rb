@@ -14,14 +14,8 @@ post '/click' do
 	
 	@@simon.recibir params["valor"].to_i
 
-	#if @@simon.validar
-	#	@resultado = "Ganaste"
-	#else
-	#	@resultado = "Perdiste"
-	#end
-
 	if @@simon.cantidad_intentos == 3
-		@resultado = "Terminado"
+		@resultado = "Ganaste"
 	else
 		@resultado = "Segui"
 	end
