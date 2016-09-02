@@ -20,10 +20,10 @@ post '/click' do
 	#	@resultado = "Perdiste"
 	#end
 
-	if @@simon.cantidad_intentos == 3
-		@resultado = "Terminado"
-	else
+	if @@simon.cantidad_intentos < 3
 		@resultado = "Segui"
+	else
+		@resultado = "Terminado"
 	end
     erb :tablero
 end
