@@ -1,0 +1,109 @@
+body{
+	padding:0;
+	margin:0;
+	background:#EEE;
+	font-family:Tahoma, Arial;
+}
+div{
+	padding:0;
+	margin:0;
+}
+.content{
+	padding:20px;
+	width:500px;
+	margin:0 auto;
+}
+
+h2{
+	font-size:40px;
+	text-align:center;
+	color:#FFF;
+	padding:0;
+	margin:0 0 10px;
+	text-shadow:0 1px 1px rgba(0,0,0,0.5);
+}
+p{
+	font-size:14px;
+	text-align:center;
+	color:#FFF;
+	padding:0;
+	margin:0 0 10px;
+	text-shadow:0 1px 1px rgba(0,0,0,0.5);
+}
+
+.buttons{
+	width:500px;
+	height:500px;
+	border-radius:250px;
+	box-shadow:0 5px 5px rgba(0,0,0,0.4);
+	text-align:center;
+}
+form{
+	padding:0;
+	margin:0;
+	display:block;
+	width:250px;
+	height:250px;
+	border:0;
+	float:left;
+}
+.buttons{}
+.buttons input{
+	display:block;
+	background:#400;
+	width:250px;
+	border:0;
+	text-indent:-999px;
+	overflow:hidden;
+	height:250px;
+	padding:0;
+	margin:0;
+	cursor:pointer;
+	-moz-transition:all .2s ease-in-out;
+	box-shadow:0 0 0 rgba(0,0,0,0.4);
+opacity:1;
+}
+.buttons input:active, .buttons input.active{
+	-moz-transform: scale(1.1);
+	box-shadow:0 2px 15px rgba(0,0,0,0.3); 
+	opacity:0.9;
+}
+.num1 input{
+	border-top-left-radius: 250px;
+	background:#32c300;
+}
+.num2 input{
+	border-top-right-radius: 250px;
+	background:#f03726;
+}
+.num3 input{
+	border-bottom-left-radius: 250px;
+	background:#4d9df2;
+}
+.num4 input{
+	border-bottom-right-radius: 250px;
+	background:#f8ff00;
+}
+.turno{
+	position:fixed;
+	bottom:30px;
+	right:30px;
+	font-size:40px;
+	text-align:center;
+	color:#FFF;
+	padding:0;
+	margin:0 0 10px;
+	text-shadow:0 1px 1px rgba(0,0,0,0.5);
+	text-decoration:none;
+}
+.results{
+	position:fixed;
+	bottom:30px;
+	right:30px;
+	font-size:40px;
+	text-align:center;
+	color:#FFF;
+	padding:0;
+	margin:0 0 10px;
+	text-shadow:0 1px 1px rgba(0,0,0,0.5);
+}
