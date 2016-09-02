@@ -52,3 +52,13 @@ Scenario: Gano, clickeo next level, vuelvo a secuencia incrementada
 Scenario: Si no gano, no me muestra next
 	Given No gane todavia
 	Then no veo "Next"
+
+Scenario: Gano, clickeo 3 veces y deberia seguir
+	Given Gano
+	When apreto "Next" y el siguiente valor es 2
+	And click Turno
+	And click 1
+	And click 2
+	And click 1
+	Then veo "Siga Siga Siga" 
+

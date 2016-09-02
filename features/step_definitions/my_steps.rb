@@ -47,3 +47,7 @@ Given(/^No gane todavia$/) do
 	click_button(1)		
 end
 
+When(/^click Turno$/) do
+	click_link("Turno")
+end
+
