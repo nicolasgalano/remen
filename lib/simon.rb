@@ -1,7 +1,11 @@
 class Simon
 
-	def initialize lista
-		@secuencia = lista
+	def initialize src
+		if src.class == Array
+			@secuencia = src
+		else
+			@secuencia = src.times.map{ Random.rand(2)+1 }
+		end
 		@secuencia_recibida = Array.new
 	end
 
