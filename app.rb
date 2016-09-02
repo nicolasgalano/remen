@@ -1,7 +1,7 @@
 require 'sinatra'
 require_relative './lib/simon.rb'
 
-@@simon = Simon.new 3
+@@simon = Simon.new 1
 
 get '/' do
 	@@secuencia = @@simon.secuencia.join ","
@@ -43,7 +43,7 @@ get '/next' do
 end
 
 get '/reset' do
-	@@simon = Simon.new(3)
+	@@simon = Simon.new(1)
 	@@secuencia = @@simon.secuencia.join ','
 	erb :tablero
 end

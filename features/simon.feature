@@ -56,7 +56,7 @@ Scenario: Si no gano, no me muestra next
 Scenario: Puedo resetear el juego
 	Given voy a "Turno"
 	When apreto "Reset"
-	Then vuelvo a una cadena de 3
+	Then vuelvo a una cadena de 1
 
 Scenario: Gano, clickeo 3 veces y deberia seguir
 	Given Gano
