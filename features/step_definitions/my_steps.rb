@@ -47,6 +47,10 @@ Given(/^No gane todavia$/) do
 	click_button(1)		
 end
 
+Then(/^vuelvo a una cadena de (\d+)$/) do |longitud|
+	@@simon.secuencia.count.should == longitud.to_i
+end
+
 When(/^click Turno$/) do
 	click_link("Turno")
 end
