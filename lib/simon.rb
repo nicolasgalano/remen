@@ -27,7 +27,7 @@ class Simon
 
 	def validar
 		throw Exception.new "Secuencia no recibida" if @secuencia_recibida.count == 0
-		@secuencia == @secuencia_recibida
+		@secuencia.slice(0, @secuencia_recibida.count) == @secuencia_recibida
 	end
 end
 

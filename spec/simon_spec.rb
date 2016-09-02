@@ -52,6 +52,33 @@ describe "simon" do
 		expect { simon.validar }.to raise_error
 	end
 
+	it "deberia rechazar primer valor incorrecto" do
+		simon = Simon.new [1, 2, 1]
+		simon.recibir 2
+		simon.validar.should == false # [1, 2, 1] == [2]
+	end
+
+	it "deberia rechazar segundo valor incorrecto" do
+		simon = Simon.new [1, 2, 1]
+		simon.recibir 1
+		simon.recibir 1
+		simon.validar.should == false
+	end
+
+	it "deberia rechazar tercer valor incorrecto" do
+		simon = Simon.new [1, 2, 1]
+		simon.recibir 1
+		simon.recibir 2
+		simon.recibir 2
+		simon.validar.should == false
+	end
+
+	it "deberia permitir primer valor correcto" do
+		simon = Simon.new [1, 2, 1]
+		simon.recibir 1
+		simon.validar.should == true # [1, 2, 1] == [1]
+	end
+
 	# cuando gana, agrega otro valor
 	# lleva bien la cuenta de la cantidad de aciertos (no secuencial, global)
 	# cuando pierde, resetea
