@@ -21,6 +21,17 @@ Scenario: Voy, Apreto mi turno, Oculta Secuencia
 	When apreto "Turno"
 	Then no veo "Secuencia"
 
+Scenario: Voy, Ingreso Primer Numero Incorrecto, Falla
+	Given voy al sitio
+	When click 2
+	Then veo "Perdiste"
+
+Scenario: Voy, Ingreso Primer Numero Incorrecto, Falla
+	Given voy al sitio
+	When click 1
+	And click 1
+	Then veo "Perdiste"
+
 
 
 

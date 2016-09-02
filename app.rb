@@ -15,7 +15,11 @@ post '/click' do
 	@@simon.recibir params["valor"].to_i
 
 	if @@simon.cantidad_intentos < 3
-		@resultado = "Segui"
+		if @@simon.validar
+			@resultado = "Segui"
+		else
+			@resultado = "Perdiste"
+		end	
 	else
 		if @@simon.validar
 			@resultado = "Ganaste"
