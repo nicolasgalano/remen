@@ -1,16 +1,47 @@
-<link rel="stylesheet/css" src="css/global.css"/>
+<html>
 
-<form action="/click" method="POST">
-	<input type="hidden" name="valor" value="1">
-	<input type="submit" value="1">
-</form>
-<form action="/click" method="POST">
-	<input type="hidden" name="valor" value="2">
-	<input type="submit" value="2">
-</form>
+<head>
+	<title>Simon Dice</title>
+	<link rel="stylesheet" type="text/css" href="css/global.css"/>
+</head>
 
-<% if @gane %>
-	<a href="/next">Next</a>
-<% end %>
+<body>
+	<div class="content">
+	
+		<h2>SIMON</h2>
 
-<%= @resultado %>
+		<div class="buttons">
+
+			<form action="/click" method="POST" class="num1">
+				<input type="hidden" name="valor" value="1">
+				<input type="submit" value="1">
+			</form>
+			<form action="/click" method="POST" class="num2">
+				<input type="hidden" name="valor" value="2">
+				<input type="submit" value="2">
+			</form>
+			<form action="/click" method="POST" class="num3">
+				<input type="hidden" name="valor" value="3">
+				<input type="submit" value="3">
+			</form>
+			<form action="/click" method="POST" class="num4">
+				<input type="hidden" name="valor" value="4">
+				<input type="submit" value="4">
+			</form>
+
+		</div>
+
+		<div class="results">
+			<%= @resultado %>
+		</div>
+
+		<% if @gane %>
+			<a href="/next">Next</a>
+		<% end %>
+
+	</div>
+
+</body>
+
+</html>
+
