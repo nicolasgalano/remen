@@ -7,7 +7,7 @@ Scenario: Mostrar una secuencia
 Scenario: Hago un click y no pasa nada
 	Given voy a "Turno"
 	When click 1
-	Then veo "Segui"
+	Then veo "Siga"
 
 Scenario: Hago tres clicks y termina el juego y compara las secuencias
 	Given voy a "Turno"
@@ -25,7 +25,7 @@ Scenario: Voy, Apreto mi turno, Muestra Botones
 	Given voy al sitio
 	When apreto "Turno"
 	And click 1
-	Then veo "Segui"
+	Then veo "Siga"
 
 Scenario: Voy, Ingreso Primer Numero Incorrecto, Falla
 	Given voy a "Turno"
@@ -38,6 +38,11 @@ Scenario: Voy, Ingreso Segundo Numero Incorrecto, Falla
 	And click 1
 	Then veo "Perdiste"
 
+Scenario: Ingreso un numero y me dice siga
+	Given voy a "Turno"
+	When click 1
+	And click 2
+	Then veo "Siga Siga" 
 
 
 

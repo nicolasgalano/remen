@@ -10,12 +10,12 @@ end
 
 post '/click' do
 	#@@contador += 1
-	
+	@resultado = ""
 	@@simon.recibir params["valor"].to_i
 
 	if @@simon.cantidad_intentos < 3
 		if @@simon.validar
-			@resultado = "Segui"
+			@resultado = "Siga " * @@simon.cantidad_intentos
 		else
 			@resultado = "Perdiste"
 		end	
