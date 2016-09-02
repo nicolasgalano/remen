@@ -14,7 +14,7 @@ post '/click' do
 	@resultado = ""
 	@@simon.recibir params["valor"].to_i
 
-	if @@simon.cantidad_intentos < 3
+	if @@simon.cantidad_intentos < @@simon.cantidad_secuencia
 		if @@simon.validar
 			@resultado = "Siga " * @@simon.cantidad_intentos
 		else

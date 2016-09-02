@@ -1,0 +1,69 @@
+<html>
+
+<head>
+	<title>Simon Dice</title>
+	<link rel="stylesheet" type="text/css" href="css/global.css"/>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script>
+
+var secuencia =	[1,2,3];
+
+var counter = 0;
+
+var i = setInterval(function(){
+
+	num = secuencia[counter];
+
+	$('.num'+num+' input').addClass('active');
+	setTimeout(function(){
+		$('.num'+num+' input').removeClass('active');
+	},500)
+
+    counter++;
+	
+    if(counter === secuencia.length) {
+        clearInterval(i);
+    }
+
+}, 1000);
+
+	</script>
+</head>
+
+<body>
+	<div class="content">
+	
+		<h2>SIMON</h2>
+
+		<p>Secuencia: <%= @@secuencia %></p>
+
+		<div class="buttons">
+
+			<form action="/click" method="POST" class="num1">
+				<input type="hidden" name="valor" value="1">
+				<input type="submit" value="1">
+			</form>
+			<form action="/click" method="POST" class="num2">
+				<input type="hidden" name="valor" value="2">
+				<input type="submit" value="2">
+			</form>
+			<form action="/click" method="POST" class="num3">
+				<input type="hidden" name="valor" value="3">
+				<input type="submit" value="3">
+			</form>
+			<form action="/click" method="POST" class="num4">
+				<input type="hidden" name="valor" value="4">
+				<input type="submit" value="4">
+			</form>
+
+		</div>
+
+		<a href="/turno" class="turno">Turno</a>
+
+	</div>
+
+</body>
+
+</html>
+
+

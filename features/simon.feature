@@ -57,3 +57,13 @@ Scenario: Puedo resetear el juego
 	Given voy a "Turno"
 	When apreto "Reset"
 	Then vuelvo a una cadena de 3
+
+Scenario: Gano, clickeo 3 veces y deberia seguir
+	Given Gano
+	When apreto "Next" y el siguiente valor es 2
+	And click Turno
+	And click 1
+	And click 2
+	And click 1
+	Then veo "Siga Siga Siga" 
+
