@@ -1,7 +1,7 @@
 class Simon
 
 	def get_random_num
-		Random.rand(2)+1
+		Random.rand(4)+1
 	end
 
 	def initialize src
