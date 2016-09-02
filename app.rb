@@ -17,7 +17,11 @@ post '/click' do
 	if @@simon.cantidad_intentos < 3
 		@resultado = "Segui"
 	else
-		@resultado = "Ganaste"
+		if @@simon.validar
+			@resultado = "Ganaste"
+		else
+			@resultado = "Perdiste"
+		end	
 	end
     erb :tablero
 end
