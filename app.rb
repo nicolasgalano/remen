@@ -5,15 +5,24 @@ get '/' do
 	@@simon = Simon.new [1,2,1]
 	@@secuencia = @@simon.secuencia.join ","
 	@resultado = ""
+	@@contador = 0
     erb :tablero
 end
 
 post '/click' do
+	@@contador += 1
+	
 	@@simon.recibir params["valor"].to_i
-	if @@simon.validar
-		@resultado = "Ganaste"
+	#if @@simon.validar
+	#	@resultado = "Ganaste"
+	#else
+	#	@resultado = "Perdiste"
+	#end
+
+	if @@contador == 3
+		@resultado = "Terminado"
 	else
-		@resultado = "Perdiste"
+		@resultado = "Segui"
 	end
     erb :tablero
 end
