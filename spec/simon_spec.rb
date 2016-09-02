@@ -2,9 +2,9 @@ require_relative '../lib/simon.rb'
 
 describe "simon" do
 
-	it "deberia mostrar un numero fijo" do
-		simon = Simon.new 2
-		simon.secuencia.should == 2
+	it "deberia mostrar una secuencia de 3 numeros" do
+		simon = Simon.new [1, 2, 1]
+		simon.cantidad_secuencia.should == 3
 	end
 
 	it "deberia recibir una opcion" do

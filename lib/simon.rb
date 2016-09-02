@@ -1,11 +1,15 @@
 class Simon
 
-	def initialize number
-		@secuencia = number
+	def initialize lista
+		@secuencia = lista
 	end
 
 	def secuencia
 		@secuencia
+	end
+
+	def cantidad_secuencia
+		@secuencia.count
 	end
 
 	def recibir number
