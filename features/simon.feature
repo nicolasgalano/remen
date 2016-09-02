@@ -5,12 +5,12 @@ Scenario: Mostrar una secuencia
 	Then veo "Secuencia: 1,2,1"
 
 Scenario: Hago un click y no pasa nada
-	Given voy al sitio
+	Given voy a "Turno"
 	When click 1
 	Then veo "Segui"
 
 Scenario: Hago tres clicks y termina el juego y compara las secuencias
-	Given voy al sitio
+	Given voy a "Turno"
 	When click 1
 	And click 2
 	And click 1
@@ -21,13 +21,19 @@ Scenario: Voy, Apreto mi turno, Oculta Secuencia
 	When apreto "Turno"
 	Then no veo "Secuencia"
 
-Scenario: Voy, Ingreso Primer Numero Incorrecto, Falla
+Scenario: Voy, Apreto mi turno, Muestra Botones
 	Given voy al sitio
+	When apreto "Turno"
+	And click 1
+	Then veo "Segui"
+
+Scenario: Voy, Ingreso Primer Numero Incorrecto, Falla
+	Given voy a "Turno"
 	When click 2
 	Then veo "Perdiste"
 
-Scenario: Voy, Ingreso Primer Numero Incorrecto, Falla
-	Given voy al sitio
+Scenario: Voy, Ingreso Segundo Numero Incorrecto, Falla
+	Given voy a "Turno"
 	When click 1
 	And click 1
 	Then veo "Perdiste"

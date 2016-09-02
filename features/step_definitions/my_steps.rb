@@ -18,3 +18,8 @@ Then(/^no veo "(.*?)"$/) do |texto|
 	last_response.body.should_not =~ /#{texto}/m
 end
 
+Given(/^voy a "(.*?)"$/) do |pantalla|
+	visit '/'
+	click_link(pantalla)
+end
+

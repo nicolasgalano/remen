@@ -4,7 +4,6 @@ require_relative './lib/simon.rb'
 get '/' do
 	@@simon = Simon.new [1,2,1]
 	@@secuencia = @@simon.secuencia.join ","
-	@resultado = ""
 	#@@contador = 0
     erb :tablero
 end
@@ -27,9 +26,10 @@ post '/click' do
 			@resultado = "Perdiste"
 		end	
 	end
-    erb :tablero
+    erb :turno_jugador
 end
 
 get '/turno' do
-    ""
+	@resultado = ""
+    erb :turno_jugador
 end
