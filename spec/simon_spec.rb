@@ -24,9 +24,26 @@ describe "simon" do
 		#simon.ya_termine.should == true
 	end
 
-	it "deberia secuencia recibida incorrecta" do
-		simon = Simon.new 2
-		simon.recibir 3
+	it "deberia validar secuencia correcta" do
+		simon = Simon.new [1, 2, 1]
+		simon.recibir 1
+		simon.recibir 2
+		simon.recibir 1
+		simon.validar.should == true
+	end
+
+	it "deberia rechazar secuencia incorrecta" do
+		simon = Simon.new [1, 2, 1]
+		simon.recibir 1
+		simon.recibir 1
+		simon.recibir 2
+		simon.validar.should == false
+	end
+
+	it "deberia rechazar secuencia incompleta" do
+		simon = Simon.new [1, 2, 1]
+		simon.recibir 1
+		simon.recibir 1
 		simon.validar.should == false
 	end
 
