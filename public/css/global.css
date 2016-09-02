@@ -23,6 +23,7 @@ h2{
 	text-shadow:0 1px 1px rgba(0,0,0,0.5);
 }
 p{
+	display:none;
 	font-size:14px;
 	text-align:center;
 	color:#FFF;
@@ -95,14 +96,37 @@ opacity:1;
 	margin:0 0 10px;
 	text-shadow:0 1px 1px rgba(0,0,0,0.5);
 	text-decoration:none;
+	opacity:0;
 }
 .results{
+	position:fixed;
+	bottom:130px;
+	right:30px;
+	font-size:40px;
+	text-align:center;
+	color:#44F;
+	padding:0;
+	margin:0 0 10px;
+	text-shadow:0 1px 1px rgba(0,0,0,0.5);
+}
+.next{
+	position:fixed;
+	bottom:30px;
+	left:30px;
+	font-size:40px;
+	text-align:center;
+	color:##4F4;
+	padding:0;
+	margin:0 0 10px;
+	text-shadow:0 1px 1px rgba(0,0,0,0.5);
+}
+.reset{
 	position:fixed;
 	bottom:30px;
 	right:30px;
 	font-size:40px;
 	text-align:center;
-	color:#FFF;
+	color:#FF4;
 	padding:0;
 	margin:0 0 10px;
 	text-shadow:0 1px 1px rgba(0,0,0,0.5);
