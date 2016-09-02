@@ -79,6 +79,11 @@ describe "simon" do
 		simon.validar.should == true # [1, 2, 1] == [1]
 	end
 
+	it "deberia generar una secuencia de 3 nros" do
+		simon = Simon.new 3
+		simon.cantidad_secuencia.should == 3
+	end
+
 	# cuando gana, agrega otro valor
 	# lleva bien la cuenta de la cantidad de aciertos (no secuencial, global)
 	# cuando pierde, resetea
