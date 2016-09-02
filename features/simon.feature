@@ -46,7 +46,7 @@ Scenario: Ingreso un numero y me dice siga
 
 Scenario: Gano, clickeo next level, vuelvo a secuencia incrementada
 	Given Gano
-	When apreto "Next"
+	When apreto "Next" y el siguiente valor es 2
 	Then veo "Secuencia: 1,2,1,2" 
 
 

@@ -36,6 +36,7 @@ get '/turno' do
 end
 
 get '/next' do
-	@@secuencia = "1,2,1,2"
+	@@simon.prox_nivel
+	@@secuencia = @@simon.secuencia.join ','
 	erb :tablero
 end
