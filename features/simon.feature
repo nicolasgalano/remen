@@ -1,24 +1,17 @@
 Feature: Simon
 
-Scenario: Mostrar Un Numero
+Scenario: Mostrar una secuencia
 	Given voy al sitio
-	Then veo "Secuencia"
+	Then veo "Secuencia: 1,2,1"
 
-Scenario: Secuencia valida
+Scenario: Hago un click y no pasa nada
 	Given voy al sitio
-	And secuencia es 1
-	When click 1
-	Then veo "Ganaste"
+	When Hago un click
+	Then veo "Segui"
 
-Scenario: Secuencia no valida
+Scenario: Hago tres clicks y termina el juego
 	Given voy al sitio
-	And secuencia es 1
-	When click 2
-	Then veo "Perdiste"
-
--- perdi y me resetea el juego
-
--- si el contador de la secuencia es menor a la cantidad de elementos de la secuencia,
--- no me dice Ganaste
+	When Hago tres click
+	Then veo "Terminado"
 
 
