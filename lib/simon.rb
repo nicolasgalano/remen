@@ -40,6 +40,7 @@ class Simon
 
 	def prox_nivel
  		@secuencia.push( get_random_num )
+		@secuencia_recibida = []
 	end
 end
 
