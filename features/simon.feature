@@ -49,5 +49,6 @@ Scenario: Gano, clickeo next level, vuelvo a secuencia incrementada
 	When apreto "Next" y el siguiente valor es 2
 	Then veo "Secuencia: 1,2,1,2" 
 
-
-
+Scenario: Si no gano, no me muestra next
+	Given No gane todavia
+	Then no veo "Next"

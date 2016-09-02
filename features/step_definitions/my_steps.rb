@@ -40,3 +40,10 @@ When(/^apreto "(.*?)" y el siguiente valor es (\d+)$/) do |texto, numero|
 	@@simon.secuencia.pop
 end
 
+Given(/^No gane todavia$/) do
+	@@simon = Simon.new [1,2,1]
+	visit '/'
+	click_link("Turno")
+	click_button(1)		
+end
+

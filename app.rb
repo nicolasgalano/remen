@@ -22,6 +22,7 @@ post '/click' do
 		end	
 	else
 		if @@simon.validar
+			@gane = true
 			@resultado = "Ganaste"
 		else
 			@resultado = "Perdiste"
