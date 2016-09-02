@@ -14,10 +14,10 @@ post '/click' do
 	
 	@@simon.recibir params["valor"].to_i
 
-	if @@simon.cantidad_intentos == 3
-		@resultado = "Ganaste"
-	else
+	if @@simon.cantidad_intentos < 3
 		@resultado = "Segui"
+	else
+		@resultado = "Ganaste"
 	end
     erb :tablero
 end
