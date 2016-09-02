@@ -2,6 +2,7 @@ class Simon
 
 	def initialize lista
 		@secuencia = lista
+		@secuencia_recibida = Array.new
 	end
 
 	def secuencia
@@ -13,7 +14,11 @@ class Simon
 	end
 
 	def recibir number
-		@secuencia_recibida = number
+		@secuencia_recibida.push number
+	end
+
+	def cantidad_intentos
+		@secuencia_recibida.count
 	end
 
 	def secuencia_recibida
@@ -21,7 +26,7 @@ class Simon
 	end
 
 	def validar
-		throw Exception.new "Secuencia no recibida" if @secuencia_recibida.nil?
+		throw Exception.new "Secuencia no recibida" if @secuencia_recibida.count == 0
 		@secuencia == @secuencia_recibida
 	end
 end

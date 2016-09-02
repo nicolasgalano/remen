@@ -7,17 +7,21 @@ describe "simon" do
 		simon.cantidad_secuencia.should == 3
 	end
 
-	it "deberia recibir una opcion" do
-		simon = Simon.new 2
+	it "deberia recibir un input del usuario y agregarla a una lista de inputs" do
+		simon = Simon.new [1, 2, 1]
+		simon.recibir 1
 		simon.recibir 2
-		simon.secuencia_recibida.should == 2
+		simon.secuencia_recibida.count.should == 2
 	end
 
 	# tener en cuenta posicion
-	it "deberia secuencia recibida correcta" do
-		simon = Simon.new 2
+	it "termino de recibir" do
+		simon = Simon.new [1, 2, 1]
+		simon.recibir 1
 		simon.recibir 2
-		simon.validar.should == true
+		simon.recibir 1
+		simon.secuencia_recibida.count.should == 3
+		#simon.ya_termine.should == true
 	end
 
 	it "deberia secuencia recibida incorrecta" do
@@ -27,7 +31,7 @@ describe "simon" do
 	end
 
 	it "deberia no validar si no se recibio input" do
-		simon = Simon.new 2
+		simon = Simon.new [1, 2, 1]
 		expect { simon.validar }.to raise_error
 	end
 
