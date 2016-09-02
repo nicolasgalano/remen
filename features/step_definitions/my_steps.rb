@@ -25,3 +25,25 @@ Given(/^voy a "(.*?)"$/) do |pantalla|
 	click_link(pantalla)
 end
 
+Given(/^Gano$/) do
+	@@simon = Simon.new [1,2,1]
+	visit '/'
+	click_link("Turno")
+	click_button(1)	
+	click_button(2)
+	click_button(1)		
+end
+
+When(/^apreto "(.*?)" y el siguiente valor es (\d+)$/) do |texto, numero|
+	@@simon.secuencia.push 2
+	click_link(texto)
+	@@simon.secuencia.pop
+end
+
+Given(/^No gane todavia$/) do
+	@@simon = Simon.new [1,2,1]
+	visit '/'
+	click_link("Turno")
+	click_button(1)		
+end
+

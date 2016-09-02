@@ -22,6 +22,7 @@ post '/click' do
 		end	
 	else
 		if @@simon.validar
+			@gane = true
 			@resultado = "Ganaste"
 		else
 			@resultado = "Perdiste"
@@ -33,4 +34,10 @@ end
 get '/turno' do
 	@resultado = ""
     erb :turno_jugador
+end
+
+get '/next' do
+	@@simon.prox_nivel
+	@@secuencia = @@simon.secuencia.join ','
+	erb :tablero
 end

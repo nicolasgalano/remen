@@ -84,6 +84,26 @@ describe "simon" do
 		simon.cantidad_secuencia.should == 3
 	end
 
+	it "deberia incrementar el nivel" do
+		simon = Simon.new [1]
+		simon.prox_nivel
+		simon.cantidad_secuencia.should == 2
+	end
+
+	it "deberia incrementar el nivel 2 veces" do
+		simon = Simon.new [1]
+		simon.prox_nivel
+		simon.prox_nivel
+		simon.cantidad_secuencia.should == 3
+	end
+
+	it "deberia resetear secuencia recibida al subir nivel" do
+		simon = Simon.new [1]
+		simon.recibir 1
+		simon.prox_nivel
+		simon.secuencia_recibida.count.should == 0
+	end
+
 	# cuando gana, agrega otro valor
 	# lleva bien la cuenta de la cantidad de aciertos (no secuencial, global)
 	# cuando pierde, resetea
