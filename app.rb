@@ -41,3 +41,10 @@ get '/next' do
 	@@secuencia = @@simon.secuencia.join ','
 	erb :tablero
 end
+
+get '/reset' do
+	@@simon = Simon.new(3)
+	@@secuencia = @@simon.secuencia.join ','
+	erb :tablero
+end
+
