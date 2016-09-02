@@ -3,7 +3,7 @@ require_relative './lib/simon.rb'
 
 get '/' do
 	@@simon = Simon.new 1
-	@@secuencia = @@simon.secuencia
+	@@secuencia = "1,2,1"
 	@resultado = ""
     erb :tablero
 end
