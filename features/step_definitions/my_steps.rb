@@ -1,5 +1,6 @@
 Given(/^voy al sitio$/) do
-  visit '/'
+	@@simon = Simon.new [1,2,1]
+	visit '/'
 end
 
 Then(/^veo "(.*?)"$/) do |text|
@@ -19,6 +20,7 @@ Then(/^no veo "(.*?)"$/) do |texto|
 end
 
 Given(/^voy a "(.*?)"$/) do |pantalla|
+	@@simon = Simon.new [1,2,1]
 	visit '/'
 	click_link(pantalla)
 end
