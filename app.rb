@@ -34,3 +34,8 @@ get '/turno' do
 	@resultado = ""
     erb :turno_jugador
 end
+
+get '/next' do
+	@@secuencia = "1,2,1,2"
+	erb :tablero
+end

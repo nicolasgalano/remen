@@ -44,6 +44,10 @@ Scenario: Ingreso un numero y me dice siga
 	And click 2
 	Then veo "Siga Siga" 
 
+Scenario: Gano, clickeo next level, vuelvo a secuencia incrementada
+	Given Gano
+	When apreto "Next"
+	Then veo "Secuencia: 1,2,1,2" 
 
 
 
